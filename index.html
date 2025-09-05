@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音频特征分析 - 挑战鸟叫排行榜</title>
+    <title>Audio Feature Analysis - Challenge the Bird Call Leaderboard</title>
     <style>
         * {
             margin: 0;
@@ -295,18 +295,18 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎵 音频特征分析</h1>
-            <p>上传你的音频，看看能否霸占鸟叫特征排行榜榜首！</p>
+            <h1>🎵 Audio Feature Analysis</h1>
+            <p>Upload your audio and see if you can dominate the bird call feature leaderboard!</p>
         </div>
 
         <div class="upload-section">
-            <h2>🎤 上传音频文件</h2>
-            <p>支持 MP3、WAV、M4A 等常见音频格式</p>
+            <h2>🎤 Upload Audio File</h2>
+            <p>Supports MP3, WAV, M4A and other common audio formats</p>
             
             <div class="upload-area" id="uploadArea">
                 <div>
-                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📎 拖拽文件到这里或点击选择</p>
-                    <button class="upload-btn" id="uploadBtn">选择音频文件</button>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📎 Drag files here or click to select</p>
+                    <button class="upload-btn" id="uploadBtn">Choose Audio File</button>
                 </div>
             </div>
             
@@ -319,34 +319,34 @@
 
         <div class="results-section" id="resultsSection">
             <div class="score-display">
-                <h2>🏆 你的得分</h2>
+                <h2>🏆 Your Score</h2>
                 <div class="score-value" id="scoreValue">0.000</div>
                 <div class="percentile-info" id="percentileInfo">
-                    <h3>与鸟叫数据对比</h3>
-                    <p id="percentileText">分析中...</p>
+                    <h3>Comparison with Bird Call Data</h3>
+                    <p id="percentileText">Analyzing...</p>
                 </div>
             </div>
 
             <div class="features-display" id="featuresDisplay">
-                <!-- 特征值将在这里显示 -->
+                <!-- Feature values will be displayed here -->
             </div>
         </div>
 
         <div class="examples-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🎯 参考音频示例</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🎯 Reference Audio Examples</h2>
             
             <div class="examples-grid">
                 <div class="example-group top-examples">
-                    <h3>🥇 高分示例（Top 10）</h3>
+                    <h3>🥇 High Score Examples (Top 10)</h3>
                     <ul class="example-list" id="topExamples">
-                        <!-- 高分示例将在这里生成 -->
+                        <!-- High score examples will be generated here -->
                     </ul>
                 </div>
 
                 <div class="example-group bottom-examples">
-                    <h3>📉 低分示例（Bottom 10）</h3>
+                    <h3>📉 Low Score Examples (Bottom 10)</h3>
                     <ul class="example-list" id="bottomExamples">
-                        <!-- 低分示例将在这里生成 -->
+                        <!-- Low score examples will be generated here -->
                     </ul>
                 </div>
             </div>
@@ -375,11 +375,11 @@
                 const fileInput = document.getElementById('fileInput');
                 const uploadBtn = document.getElementById('uploadBtn');
 
-                // 点击上传
+                // Click upload
                 uploadBtn.addEventListener('click', () => fileInput.click());
                 uploadArea.addEventListener('click', () => fileInput.click());
 
-                // 拖拽上传
+                // Drag and drop upload
                 uploadArea.addEventListener('dragover', (e) => {
                     e.preventDefault();
                     uploadArea.classList.add('dragover');
@@ -398,7 +398,7 @@
                     }
                 });
 
-                // 文件选择
+                // File selection
                 fileInput.addEventListener('change', (e) => {
                     if (e.target.files.length > 0) {
                         this.processFile(e.target.files[0]);
@@ -408,7 +408,7 @@
 
             async processFile(file) {
                 if (!file.type.startsWith('audio/')) {
-                    this.showError('请选择音频文件');
+                    this.showError('Please select an audio file');
                     return;
                 }
 
@@ -426,8 +426,8 @@
                     this.displayResults(features, score);
                     
                 } catch (error) {
-                    console.error('处理音频时出错:', error);
-                    this.showError('音频处理失败，请尝试其他文件');
+                    console.error('Error processing audio:', error);
+                    this.showError('Audio processing failed, please try another file');
                 } finally {
                     this.hideProgress();
                 }
@@ -468,7 +468,7 @@
                 const audioData = audioBuffer.getChannelData(0);
                 const sampleRate = audioBuffer.sampleRate;
                 
-                // 简化的特征提取（在实际应用中需要更复杂的算法）
+                // Simplified feature extraction (requires more complex algorithms in real applications)
                 const features = {
                     mfcc_8_std: this.calculateMFCCStd(audioData, sampleRate, 8),
                     spectral_centroid_std: this.calculateSpectralCentroidStd(audioData, sampleRate),
@@ -480,7 +480,7 @@
             }
 
             calculateMFCCStd(audioData, sampleRate, coeffIndex) {
-                // 简化的MFCC计算
+                // Simplified MFCC calculation
                 const frameSize = 1024;
                 const hopSize = 512;
                 const mfccValues = [];
@@ -495,7 +495,7 @@
             }
 
             simpleMFCC(frame, coeffIndex) {
-                // 极简化的MFCC近似
+                // Very simplified MFCC approximation
                 const fft = this.simpleFFT(frame);
                 const logSpectrum = fft.map(x => Math.log(Math.abs(x) + 1e-10));
                 return logSpectrum[coeffIndex % logSpectrum.length] || 0;
@@ -531,11 +531,11 @@
             }
 
             calculateChromaStd(audioData, sampleRate, note) {
-                // 简化的色度特征计算
+                // Simplified chroma feature calculation
                 const frameSize = 1024;
                 const hopSize = 512;
                 const chromaValues = [];
-                const noteFreqs = {'A': 440, 'B': 493.88, 'C': 261.63}; // 简化
+                const noteFreqs = {'A': 440, 'B': 493.88, 'C': 261.63}; // Simplified
                 const targetFreq = noteFreqs[note] || 440;
                 
                 for (let i = 0; i < audioData.length - frameSize; i += hopSize) {
@@ -553,7 +553,7 @@
                 const binFreq = sampleRate / (2 * magnitude.length);
                 const targetBin = Math.round(targetFreq / binFreq);
                 
-                // 返回目标频率附近的能量
+                // Return energy around target frequency
                 const windowSize = 5;
                 let energy = 0;
                 for (let i = Math.max(0, targetBin - windowSize); 
@@ -564,7 +564,7 @@
             }
 
             calculatePulseClarity(audioData, sampleRate) {
-                // 简化的节拍清晰度计算
+                // Simplified pulse clarity calculation
                 const frameSize = 2048;
                 const hopSize = 512;
                 const energies = [];
@@ -575,7 +575,7 @@
                     energies.push(energy);
                 }
                 
-                // 寻找周期性模式
+                // Look for periodic patterns
                 const autocorr = this.autocorrelation(energies);
                 const peaks = this.findPeaks(autocorr);
                 
@@ -583,7 +583,7 @@
             }
 
             simpleFFT(frame) {
-                // 极简化的FFT近似（仅用于演示）
+                // Very simplified FFT approximation (for demonstration only)
                 const N = frame.length;
                 const result = [];
                 
@@ -646,33 +646,33 @@
                 const percentileText = document.getElementById('percentileText');
                 const featuresDisplay = document.getElementById('featuresDisplay');
 
-                // 显示分数
+                // Display score
                 scoreValue.textContent = score.toFixed(3);
 
-                // 计算百分位数
+                // Calculate percentile
                 const percentile = this.getPercentile(score);
                 percentileText.innerHTML = `
-                    <strong>你的得分：${score.toFixed(3)}</strong><br>
+                    <strong>Your Score: ${score.toFixed(3)}</strong><br>
                     ${percentile.description}<br>
-                    <small>参考：鸟叫数据的中位数为 ${this.birdScorePercentiles[50]}</small>
+                    <small>Reference: Bird call data median is ${this.birdScorePercentiles[50]}</small>
                 `;
 
-                // 显示特征值
+                // Display feature values
                 featuresDisplay.innerHTML = `
                     <div class="feature-card">
-                        <div class="feature-label">MFCC-8 标准差</div>
+                        <div class="feature-label">MFCC-8 Standard Deviation</div>
                         <div class="feature-value">${features.mfcc_8_std.toFixed(4)}</div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-label">频谱质心标准差</div>
+                        <div class="feature-label">Spectral Centroid Std</div>
                         <div class="feature-value">${features.spectral_centroid_std.toFixed(4)}</div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-label">色度A标准差</div>
+                        <div class="feature-label">Chroma A Standard Deviation</div>
                         <div class="feature-value">${features.chroma_A_std.toFixed(4)}</div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-label">脉冲清晰度</div>
+                        <div class="feature-label">Pulse Clarity</div>
                         <div class="feature-value">${features.pulse_clarity.toFixed(4)}</div>
                     </div>
                 `;
@@ -684,27 +684,27 @@
             getPercentile(score) {
                 if (score < this.birdScorePercentiles[10]) {
                     return {
-                        description: "🎉 恭喜！你的得分低于90%的鸟叫，特征非常独特！"
+                        description: "🎉 Congratulations! Your score is lower than 90% of bird calls, very unique features!"
                     };
                 } else if (score < this.birdScorePercentiles[25]) {
                     return {
-                        description: "👏 很棒！你的得分低于75%的鸟叫，表现优秀！"
+                        description: "👏 Great! Your score is lower than 75% of bird calls, excellent performance!"
                     };
                 } else if (score < this.birdScorePercentiles[50]) {
                     return {
-                        description: "😊 不错！你的得分低于50%的鸟叫，处于中上水平！"
+                        description: "😊 Nice! Your score is lower than 50% of bird calls, above average level!"
                     };
                 } else if (score < this.birdScorePercentiles[75]) {
                     return {
-                        description: "😐 你的得分处于鸟叫数据的25%-50%区间，还有提升空间！"
+                        description: "😐 Your score is in the 25%-50% range of bird call data, room for improvement!"
                     };
                 } else if (score < this.birdScorePercentiles[90]) {
                     return {
-                        description: "🤔 你的得分处于鸟叫数据的10%-25%区间，建议尝试其他音频！"
+                        description: "🤔 Your score is in the 10%-25% range of bird call data, try other audio files!"
                     };
                 } else {
                     return {
-                        description: "😅 你的得分高于90%的鸟叫，可能需要调整音频质量！"
+                        description: "😅 Your score is higher than 90% of bird calls, may need to adjust audio quality!"
                     };
                 }
             }
@@ -713,46 +713,46 @@
                 const topExamples = document.getElementById('topExamples');
                 const bottomExamples = document.getElementById('bottomExamples');
 
-                // 高分示例（低分值）
+                // High score examples (low score values)
                 const topScores = [2.85, 2.92, 3.01, 3.08, 3.15, 3.22, 3.29, 3.35, 3.41, 3.48];
                 const topExampleData = topScores.map((score, i) => ({
-                    name: `高分鸟叫示例 ${i + 1}`,
+                    name: `High Score Bird Call ${i + 1}`,
                     score: score,
-                    url: `https://example.com/bird_${i + 1}.mp3` // 占位URL
+                    url: `https://example.com/bird_${i + 1}.mp3` // Placeholder URL
                 }));
 
-                // 低分示例（高分值）
+                // Low score examples (high score values)
                 const bottomScores = [4.85, 4.72, 4.68, 4.61, 4.58, 4.52, 4.45, 4.38, 4.32, 4.25];
                 const bottomExampleData = bottomScores.map((score, i) => ({
-                    name: `低分鸟叫示例 ${i + 1}`,
+                    name: `Low Score Bird Call ${i + 1}`,
                     score: score,
-                    url: `https://example.com/bird_low_${i + 1}.mp3` // 占位URL
+                    url: `https://example.com/bird_low_${i + 1}.mp3` // Placeholder URL
                 }));
 
-                // 渲染高分示例
+                // Render high score examples
                 topExampleData.forEach(item => {
                     const li = document.createElement('li');
                     li.className = 'example-item';
                     li.innerHTML = `
                         <div>
                             <strong>${item.name}</strong><br>
-                            <small>得分: ${item.score.toFixed(3)}</small>
+                            <small>Score: ${item.score.toFixed(3)}</small>
                         </div>
-                        <button class="play-btn" onclick="playExample('${item.url}')">播放</button>
+                        <button class="play-btn" onclick="playExample('${item.url}')">Play</button>
                     `;
                     topExamples.appendChild(li);
                 });
 
-                // 渲染低分示例
+                // Render low score examples
                 bottomExampleData.forEach(item => {
                     const li = document.createElement('li');
                     li.className = 'example-item';
                     li.innerHTML = `
                         <div>
                             <strong>${item.name}</strong><br>
-                            <small>得分: ${item.score.toFixed(3)}</small>
+                            <small>Score: ${item.score.toFixed(3)}</small>
                         </div>
-                        <button class="play-btn" onclick="playExample('${item.url}')">播放</button>
+                        <button class="play-btn" onclick="playExample('${item.url}')">Play</button>
                     `;
                     bottomExamples.appendChild(li);
                 });
@@ -771,13 +771,13 @@
             }
         }
 
-        // 播放示例音频的函数
+        // Function to play example audio
         function playExample(url) {
-            // 由于是示例URL，这里只是显示提示
-            alert('这是示例音频链接，在实际部署时需要替换为真实的音频文件URL');
+            // Since these are example URLs, this just shows a notification
+            alert('This is an example audio link. In actual deployment, replace with real audio file URLs');
         }
 
-        // 初始化应用
+        // Initialize application
         document.addEventListener('DOMContentLoaded', () => {
             new AudioAnalyzer();
         });
