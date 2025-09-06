@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Feature Analysis - Challenge the Bird Call Leaderboard</title>
     <link rel="stylesheet" href="style.css">
-            
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Audio Feature Analysis</h1>
+            <p>Upload your audio and see if you can dominate the bird call feature leaderboard!</p>
+        </div>
+        <div class="upload-section">
+            <h2>🎤 Upload Audio File</h2>
+            <p>Supports MP3, WAV, M4A and other common audio formats</p>
             <div class="upload-area" id="uploadArea">
                 <div>
                     <p style="font-size: 1.2rem; margin-bottom: 10px;">📎 Drag files here or click to select</p>
                     <button class="upload-btn" id="uploadBtn">Choose Audio File</button>
                 </div>
             </div>
-            
             <input type="file" id="fileInput" class="file-input" accept="audio/*">
-            
             <div class="progress-bar" id="progressBar" style="display: none;">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
         </div>
-
         <div class="results-section" id="resultsSection">
             <div class="score-display">
                 <h2>🏆 Your Score</h2>
@@ -29,17 +35,14 @@
                     <p id="percentileText">Analyzing...</p>
                 </div>
             </div>
-
             <div class="features-display" id="featuresDisplay">
                 <!-- Feature values will be displayed here -->
             </div>
         </div>
-
         <div class="examples-section">
             <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📊 Species Average Score Ranking</h2>
             <div id="speciesRanking"></div>
         </div>
-
         <div class="examples-section">
             <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🎯 Reference Audio Examples</h2>
             <div class="examples-grid">
@@ -58,7 +61,6 @@
             </div>
         </div>
     </div>
-
     <script src="audio-analyzer.js"></script>
     <script src="examples.js"></script>
     <script src="main.js"></script>
