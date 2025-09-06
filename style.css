@@ -1,3 +1,56 @@
+/* 美化物种排名区域 */
+.species-ranking-top10, .species-ranking-bottom10 {
+    background: linear-gradient(135deg, #e3f6e5 0%, #c2e9c7 100%);
+    /* Top 10绿色，Bottom 10稍微偏红但低饱和度 */
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(60, 120, 60, 0.08);
+}
+.species-ranking-bottom10 {
+    background: linear-gradient(135deg, #fbeaea 0%, #f5d6d6 100%);
+    box-shadow: 0 4px 16px rgba(180, 60, 60, 0.08);
+}
+.species-ranking-item {
+    background: rgba(255,255,255,0.85);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-left: 5px solid #b2e2b2;
+}
+.species-ranking-bottom10 .species-ranking-item {
+    border-left: 5px solid #f5b2b2;
+}
+.species-ranking-item strong {
+    font-size: 1.08rem;
+    color: #2d6a4f;
+}
+.species-ranking-bottom10 .species-ranking-item strong {
+    color: #b23a48;
+}
+.species-ranking-item span, .species-ranking-item div {
+    font-size: 0.98rem;
+}
+.species-ranking-item .example-recording {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    color: #555;
+}
+.species-ranking-bottom10 .species-ranking-item .example-recording {
+    color: #a55;
+}
+.species-ranking-item .play-btn {
+    margin-left: 8px;
+}
+.species-ranking-item .citation {
+    font-size: 0.9em;
+    color: #888;
+    margin-left: 10px;
+}
 /* style.css for birdsong-analyzer */
 * {
     margin: 0;
