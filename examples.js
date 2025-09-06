@@ -7,7 +7,7 @@ const speciesRanking = [
         score: 5.163862154,
         name: 'Eurasian Skylark',
         example: {
-            url: 'https://example.com/arvensis_example.mp3',
+            url: 'https://xeno-canto.org/158166',
             score: 5.21,
             citation: 'Xeno-canto XC123456'
         }
@@ -17,7 +17,7 @@ const speciesRanking = [
         score: 5.134693441,
         name: 'European Robin',
         example: {
-            url: 'https://example.com/rubecula_example.mp3',
+            url: 'https://xeno-canto.org/133862',
             score: 5.10,
             citation: 'Xeno-canto XC234567'
         }
