@@ -69,24 +69,56 @@ const speciesRanking = [
 
 
 function renderExamples() {
-    // 平均分排名区域
+    // 平均分排名区域分为Top 10和Bottom 10
     const rankingContainer = document.getElementById('speciesRanking');
     if (rankingContainer) {
-        rankingContainer.innerHTML = '';
-        speciesRanking.forEach((sp, idx) => {
+        rankingContainer.innerHTML = `
+            <div class="species-ranking-top10" style="background:linear-gradient(135deg,#4CAF50,#45a049);padding:20px;border-radius:15px;margin-bottom:30px;">
+                <h3 style="color:white;text-align:center;">Top 10 Species (Highest Average Score)</h3>
+                <div id="speciesTop10"></div>
+            </div>
+            <div class="species-ranking-bottom10" style="background:linear-gradient(135deg,#f44336,#d32f2f);padding:20px;border-radius:15px;">
+                <h3 style="color:white;text-align:center;">Bottom 10 Species (Lowest Average Score)</h3>
+                <div id="speciesBottom10"></div>
+            </div>
+        `;
+        // Top 10
+        const top10 = speciesRanking.slice(0, 10);
+        const top10Container = document.getElementById('speciesTop10');
+        top10.forEach((sp, idx) => {
             const div = document.createElement('div');
             div.className = 'species-ranking-item';
+            div.style.marginBottom = '18px';
             div.innerHTML = `
                 <div><strong>#${idx + 1} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
-                <div>Average Score: <span style="color:#d32f2f;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
+                <div>Average Score: <span style="color:#fff;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
                 <div class="example-recording">
                     <span>Example recording:</span>
                     <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
                     <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
-                    <span style="margin-left:10px;font-size:0.9em;color:#666;">Citation: ${sp.example.citation}</span>
+                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.citation}</span>
                 </div>
             `;
-            rankingContainer.appendChild(div);
+            top10Container.appendChild(div);
+        });
+        // Bottom 10
+        const bottom10 = speciesRanking.slice(-10);
+        const bottom10Container = document.getElementById('speciesBottom10');
+        bottom10.forEach((sp, idx) => {
+            const div = document.createElement('div');
+            div.className = 'species-ranking-item';
+            div.style.marginBottom = '18px';
+            div.innerHTML = `
+                <div><strong>#${speciesRanking.length-9+idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
+                <div>Average Score: <span style="color:#fff;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
+                <div class="example-recording">
+                    <span>Example recording:</span>
+                    <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
+                    <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
+                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.citation}</span>
+                </div>
+            `;
+            bottom10Container.appendChild(div);
         });
     }
 
