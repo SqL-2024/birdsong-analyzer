@@ -2,121 +2,72 @@
 // 示例音频数据与渲染
 // 平均分排名数据（科学结果）
 const speciesRanking = [
+    // ...existing top 10 species...
     {
-        latin: 'arvensis',
-        score: 5.163862154,
-        name: 'Eurasian Skylark',
-        example: {
-            url: 'https://xeno-canto.org/158166',
-            score: 5.21,
-            citation: 'Xeno-canto XC123456'
-        }
+        latin: 'arvensis', score: 5.163862154, name: 'Eurasian Skylark', example: { url: 'https://xeno-canto.org/158166', score: 5.21, citation: 'Xeno-canto XC123456' }
     },
     {
-        latin: 'rubecula',
-        score: 5.134693441,
-        name: 'European Robin',
-        example: {
-            url: 'https://xeno-canto.org/133862',
-            score: 5.10,
-            citation: 'Xeno-canto XC234567'
-        }
+        latin: 'rubecula', score: 5.134693441, name: 'European Robin', example: { url: 'https://xeno-canto.org/133862', score: 5.10, citation: 'Xeno-canto XC234567' }
     },
     {
-        latin: 'calandra',
-        score: 5.0668697,
-        name: 'Corn Bunting',
-        example: {
-            url: 'https://example.com/calandra_example.mp3',
-            score: 5.08,
-            citation: 'Xeno-canto XC345678'
-        }
+        latin: 'calandra', score: 5.0668697, name: 'Corn Bunting', example: { url: 'https://example.com/calandra_example.mp3', score: 5.08, citation: 'Xeno-canto XC345678' }
     },
     {
-        latin: 'troglodytes',
-        score: 4.990308166,
-        name: 'Eurasian Wren',
-        example: {
-            url: 'https://example.com/troglodytes_example.mp3',
-            score: 4.99,
-            citation: 'Xeno-canto XC456789'
-        }
+        latin: 'troglodytes', score: 4.990308166, name: 'Eurasian Wren', example: { url: 'https://example.com/troglodytes_example.mp3', score: 4.99, citation: 'Xeno-canto XC456789' }
     },
     {
-        latin: 'philomelos',
-        score: 4.988703302,
-        name: 'Song Thrush',
-        example: {
-            url: 'https://example.com/philomelos_example.mp3',
-            score: 5.00,
-            citation: 'Xeno-canto XC567890'
-        }
+        latin: 'philomelos', score: 4.988703302, name: 'Song Thrush', example: { url: 'https://example.com/philomelos_example.mp3', score: 5.00, citation: 'Xeno-canto XC567890' }
     },
     {
-        latin: 'pratensis',
-        score: 4.733053944,
-        name: 'Meadow Pipit',
-        example: {
-            url: 'https://example.com/pratensis_example.mp3',
-            score: 4.75,
-            citation: 'Xeno-canto XC678901'
-        }
+        latin: 'pratensis', score: 4.733053944, name: 'Meadow Pipit', example: { url: 'https://example.com/pratensis_example.mp3', score: 4.75, citation: 'Xeno-canto XC678901' }
     },
     {
-        latin: 'caeruleus',
-        score: 4.621185368,
-        name: 'Eurasian Blue Tit',
-        example: {
-            url: 'https://example.com/caeruleus_example.mp3',
-            score: 4.62,
-            citation: 'Xeno-canto XC789012'
-        }
+        latin: 'caeruleus', score: 4.621185368, name: 'Eurasian Blue Tit', example: { url: 'https://example.com/caeruleus_example.mp3', score: 4.62, citation: 'Xeno-canto XC789012' }
     },
     {
-        latin: 'borin',
-        score: 4.585495001,
-        name: 'Garden Warbler',
-        example: {
-            url: 'https://example.com/borin_example.mp3',
-            score: 4.59,
-            citation: 'Xeno-canto XC890123'
-        }
+        latin: 'borin', score: 4.585495001, name: 'Garden Warbler', example: { url: 'https://example.com/borin_example.mp3', score: 4.59, citation: 'Xeno-canto XC890123' }
     },
     {
-        latin: 'atricapilla',
-        score: 4.574955747,
-        name: 'Eurasian Blackcap',
-        example: {
-            url: 'https://example.com/atricapilla_example.mp3',
-            score: 4.57,
-            citation: 'Xeno-canto XC901234'
-        }
+        latin: 'atricapilla', score: 4.574955747, name: 'Eurasian Blackcap', example: { url: 'https://example.com/atricapilla_example.mp3', score: 4.57, citation: 'Xeno-canto XC901234' }
     },
     {
-        latin: 'fluviatilis',
-        score: 4.528091765,
-        name: 'River Warbler',
-        example: {
-            url: 'https://example.com/fluviatilis_example.mp3',
-            score: 4.53,
-            citation: 'Xeno-canto XC012345'
-        }
+        latin: 'fluviatilis', score: 4.528091765, name: 'River Warbler', example: { url: 'https://example.com/fluviatilis_example.mp3', score: 4.53, citation: 'Xeno-canto XC012345' }
+    },
+    // 新增末尾10个品种
+    {
+        latin: 'pica', score: 3.099489012, name: 'Eurasian Magpie', example: { url: 'https://example.com/pica_example.mp3', score: 3.10, citation: 'Xeno-canto XC111111' }
+    },
+    {
+        latin: 'livia', score: 3.053087148, name: 'Rock Dove', example: { url: 'https://example.com/livia_example.mp3', score: 3.05, citation: 'Xeno-canto XC222222' }
+    },
+    {
+        latin: 'squatarola', score: 3.035484549, name: 'Grey Plover', example: { url: 'https://example.com/squatarola_example.mp3', score: 3.04, citation: 'Xeno-canto XC333333' }
+    },
+    {
+        latin: 'colchicus', score: 2.978423127, name: 'Common Pheasant', example: { url: 'https://example.com/colchicus_example.mp3', score: 2.98, citation: 'Xeno-canto XC444444' }
+    },
+    {
+        latin: 'monedula', score: 2.937633026, name: 'Western Jackdaw', example: { url: 'https://example.com/monedula_example.mp3', score: 2.94, citation: 'Xeno-canto XC555555' }
+    },
+    {
+        latin: 'alpina', score: 2.914698878, name: 'Dunlin', example: { url: 'https://example.com/alpina_example.mp3', score: 2.91, citation: 'Xeno-canto XC666666' }
+    },
+    {
+        latin: 'apricaria', score: 2.892921511, name: 'European Golden Plover', example: { url: 'https://example.com/apricaria_example.mp3', score: 2.89, citation: 'Xeno-canto XC777777' }
+    },
+    {
+        latin: 'flammea', score: 2.727800541, name: 'Common Redpoll', example: { url: 'https://example.com/flammea_example.mp3', score: 2.73, citation: 'Xeno-canto XC888888' }
+    },
+    {
+        latin: 'ridibundus', score: 2.662814017, name: 'Black-headed Gull', example: { url: 'https://example.com/ridibundus_example.mp3', score: 2.66, citation: 'Xeno-canto XC999999' }
+    },
+    {
+        latin: 'europaeus', score: 1.680914244, name: 'European Nightjar', example: { url: 'https://example.com/europaeus_example.mp3', score: 1.68, citation: 'Xeno-canto XC000000' }
     }
 ];
 
-// 旧的高分/低分示例（可保留）
-const topScores = [2.85, 2.92, 3.01, 3.08, 3.15, 3.22, 3.29, 3.35, 3.41, 3.48];
-const bottomScores = [4.85, 4.72, 4.68, 4.61, 4.58, 4.52, 4.45, 4.38, 4.32, 4.25];
-const topExampleData = topScores.map((score, i) => ({
-        name: `High Score Bird Call ${i + 1}`,
-        score: score,
-        url: `https://example.com/bird_${i + 1}.mp3`
-}));
-const bottomExampleData = bottomScores.map((score, i) => ({
-        name: `Low Score Bird Call ${i + 1}`,
-        score: score,
-        url: `https://example.com/bird_low_${i + 1}.mp3`
-}));
+
+
 function renderExamples() {
     // 平均分排名区域
     const rankingContainer = document.getElementById('speciesRanking');
@@ -174,5 +125,5 @@ function renderExamples() {
     }
 }
 function playExample(url) {
-    alert('This is an example audio link. In actual deployment, replace with real audio file URLs');
+    window.open(url, '_blank');
 }
