@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Feature Analysis - Challenge the Bird Call Leaderboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
             
             <div class="upload-area" id="uploadArea">
                 <div>
@@ -50,8 +36,12 @@
         </div>
 
         <div class="examples-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📊 Species Average Score Ranking</h2>
+            <div id="speciesRanking"></div>
+        </div>
+
+        <div class="examples-section">
             <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🎯 Reference Audio Examples</h2>
-            
             <div class="examples-grid">
                 <div class="example-group top-examples">
                     <h3>🥇 High Score Examples (Top 10)</h3>
@@ -59,7 +49,6 @@
                         <!-- High score examples will be generated here -->
                     </ul>
                 </div>
-
                 <div class="example-group bottom-examples">
                     <h3>📉 Low Score Examples (Bottom 10)</h3>
                     <ul class="example-list" id="bottomExamples">
