@@ -9,15 +9,31 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎵 Audio Feature Analysis</h1>
-            <p>Upload your audio and see if you can dominate the bird call feature leaderboard!</p>
+            <h1>🎵 Birdsong and Human Wellbeing</h1>
+            <p>Upload your birdsong recording and see if you can dominate the leaderboard!</p>
         </div>
-        <div class="examples-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">� Species Average Score Ranking</h2>
-            <div id="speciesRanking" style="display: flex; gap: 30px;">
-                <!-- Top 10 和 Bottom 10 会由JS渲染 -->
+        <div class="upload-section">
+            <h2>🎤 Upload Audio File</h2>
+            <p>Supports MP3, WAV, M4A and other common audio formats</p>
+            <div class="upload-area" id="uploadArea">
+                <div>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📎 Drag files here or click to select</p>
+                    <button class="upload-btn" id="uploadBtn">Choose Audio File</button>
+                </div>
+            </div>
+            <input type="file" id="fileInput" class="file-input" accept="audio/*">
+            <div class="progress-bar" id="progressBar" style="display: none;">
+                <div class="progress-fill" id="progressFill"></div>
             </div>
         </div>
+        <div class="results-section" id="resultsSection" style="display:none;">
+            <div class="score-display">
+                <h2>🏆 Your Score</h2>
+                <div class="score-value" id="scoreValue">0.000</div>
+                <div class="percentile-info" id="percentileInfo">
+                    <h3>Comparison with Bird Call Data</h3>
+                    <p id="percentileText">Analyzing...</p>
+                </div>
             </div>
             <div class="features-display" id="featuresDisplay">
                 <!-- Feature values will be displayed here -->
@@ -25,23 +41,8 @@
         </div>
         <div class="examples-section">
             <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📊 Species Average Score Ranking</h2>
-            <div id="speciesRanking"></div>
-        </div>
-        <div class="examples-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🎯 Reference Audio Examples</h2>
-            <div class="examples-grid">
-                <div class="example-group top-examples">
-                    <h3>🥇 High Score Examples (Top 10)</h3>
-                    <ul class="example-list" id="topExamples">
-                        <!-- High score examples will be generated here -->
-                    </ul>
-                </div>
-                <div class="example-group bottom-examples">
-                    <h3>📉 Low Score Examples (Bottom 10)</h3>
-                    <ul class="example-list" id="bottomExamples">
-                        <!-- Low score examples will be generated here -->
-                    </ul>
-                </div>
+            <div id="speciesRanking" style="display: flex; gap: 30px;">
+                <!-- Top 10 和 Bottom 10 会由JS渲染 -->
             </div>
         </div>
     </div>
