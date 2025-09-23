@@ -4,65 +4,67 @@
 const speciesRanking = [
     // ...existing top 10 species...
     {
-        latin: 'arvensis', score: 5.163862154, name: 'Eurasian Skylark', example: { url: 'https://xeno-canto.org/158166', score: 5.77, source: 'Mike Nelson, XC133862. Accessible at www.xeno-canto.org/133862.' }
+        latin: 'arvensis', score: 1.483, name: 'Eurasian Skylark', example: { url: 'https://xeno-canto.org/158166', score: 1.633, source: 'Mike Nelson, XC133862. Accessible at www.xeno-canto.org/133862.' }
     },
     {
-        latin: 'rubecula', score: 5.134693441, name: 'European Robin', example: { url: 'https://xeno-canto.org/133862', score: 5.6665, source: 'david m, XC158166. Accessible at www.xeno-canto.org/158166.' }
+        latin: 'rubecula', score:1.471, name: 'European Robin', example: { url: 'https://xeno-canto.org/133862', score: 1.675, source: 'david m, XC158166. Accessible at www.xeno-canto.org/158166.' }
     },
     {
-        latin: 'calandra', score: 5.0668697, name: 'Corn Bunting', example: { url: 'https://xeno-canto.org/123167', score: 5.55, source: 'david m, XC123167. Accessible at www.xeno-canto.org/123167.' }
+        latin: 'calandra', score: 1.447, name: 'Corn Bunting', example: { url: 'https://xeno-canto.org/123167', score: 1.599, source: 'david m, XC123167. Accessible at www.xeno-canto.org/123167.' }
     },
     {
-        latin: 'troglodytes', score: 4.990308166, name: 'Eurasian Wren', example: { url: 'https://xeno-canto.org/133872', score: 5.18, source: 'Mike Nelson, XC133872. Accessible at www.xeno-canto.org/133872.' }
+        latin: 'philomelos', score:1.429, name: 'Song Thrush', example: { url: 'https://xeno-canto.org/96608', score: 1.573, source: 'Fraser Simpson, XC96608. Accessible at www.xeno-canto.org/96608.' }
+
     },
     {
-        latin: 'philomelos', score: 4.988703302, name: 'Song Thrush', example: { url: 'https://xeno-canto.org/96608', score: 5.45, source: 'Fraser Simpson, XC96608. Accessible at www.xeno-canto.org/96608.' }
+        latin: 'troglodytes', score: 1.425, name: 'Eurasian Wren', example: { url: 'https://xeno-canto.org/133872', score: 1.485, source: 'Mike Nelson, XC133872. Accessible at www.xeno-canto.org/133872.' }
     },
     {
-        latin: 'pratensis', score: 4.733053944, name: 'Meadow Pipit', example: { url: 'https://xeno-canto.org/138979', score: 5.02, source: 'Fernand DEROUSSEN, XC138979. Accessible at www.xeno-canto.org/138979.' }
+        latin: 'pratensis', score: 1.340, name: 'Meadow Pipit', example: { url: 'https://xeno-canto.org/138979', score: 1.431, source: 'Fernand DEROUSSEN, XC138979. Accessible at www.xeno-canto.org/138979.' }
     },
     {
-        latin: 'caeruleus', score: 4.621185368, name: 'Eurasian Blue Tit', example: { url: 'https://xeno-canto.org/44203', score: 5.03, source: 'Stuart Fisher, XC44203. Accessible at www.xeno-canto.org/44203.' }
+        latin: 'caeruleus', score: 1.304, name: 'Eurasian Blue Tit', example: { url: 'https://xeno-canto.org/44203', score: 1.425, source: 'Stuart Fisher, XC44203. Accessible at www.xeno-canto.org/44203.' }
     },
     {
-        latin: 'borin', score: 4.585495001, name: 'Garden Warbler', example: { url: 'https://xeno-canto.org/146260', score: 4.90, source: 'david m, XC146260. Accessible at www.xeno-canto.org/146260.' }
+        latin: 'borin', score: 1.291, name: 'Garden Warbler', example: { url: 'https://xeno-canto.org/146260', score: 1.391, source: 'david m, XC146260. Accessible at www.xeno-canto.org/146260.' }
     },
     {
-        latin: 'atricapilla', score: 4.574955747, name: 'Eurasian Blackcap', example: { url: 'https://xeno-canto.org/94967', score: 5.27, source: 'Richard Dunn, XC94967. Accessible at www.xeno-canto.org/94967.' }
+        latin: 'atricapilla', score:1.286, name: 'Eurasian Blackcap', example: { url: 'https://xeno-canto.org/94967', score: 1.501, source: 'Richard Dunn, XC94967. Accessible at www.xeno-canto.org/94967.' }
     },
     {
-        latin: 'fluviatilis', score: 4.528091765, name: 'River Warbler', example: { url: 'https://xeno-canto.org/140557', score: 5.27, source: 'Fernand DEROUSSEN, XC140557. Accessible at www.xeno-canto.org/140557.' }
+        latin: 'fluviatilis', score: 1.279, name: 'River Warbler', example: { url: 'https://xeno-canto.org/140557', score: 1.511, source: 'Fernand DEROUSSEN, XC140557. Accessible at www.xeno-canto.org/140557.' }
     },
     // 新增末尾10个品种
     {
-        latin: 'pica', score: 3.099489012, name: 'Eurasian Magpie', example: { url: 'https://xeno-canto.org/111111', score: 3.10, source: 'Xeno-canto XC111111. Accessible at www.xeno-canto.org/111111.' }
+        latin: 'gallinago', score: 0.844, name: 'Eurasian Magpie', example: { url: 'https://xeno-canto.org/27080', score: 0.794, source: 'Patrik Åberg, XC27080. Accessible at www.xeno-canto.org/27080.' }
     },
     {
-        latin: 'livia', score: 3.053087148, name: 'Rock Dove', example: { url: 'https://example.com/livia_example.mp3', score: 3.05, source: 'Xeno-canto XC222222' }
+        latin: 'squatarola', score: 0.832, name: 'Grey Plover', example: { url: 'https://xeno-canto.org/150291', score: 0.704, source: 'Volker Arnold, XC150291. Accessible at www.xeno-canto.org/150291.' }
+
     },
     {
-        latin: 'squatarola', score: 3.035484549, name: 'Grey Plover', example: { url: 'https://example.com/squatarola_example.mp3', score: 3.04, source: 'Xeno-canto XC333333' }
+        latin: 'livia', score: 0.824, name: 'Rock Dove', example: { url: 'https://xeno-canto.org/116226', score: 0.794, source: 'Jarek Matusiak, XC116226. Accessible at www.xeno-canto.org/116226.' }
     },
     {
-        latin: 'colchicus', score: 2.978423127, name: 'Common Pheasant', example: { url: 'https://example.com/colchicus_exa.mp3', score: 2.98, source: 'Xeno-canto XC444444' }
+        latin: 'colchicus', score: 0.809, name: 'Common Pheasant', example: { url: 'https://xeno-canto.org/121326', score: 0.574, source: 'Jarek Matusiak, XC121326. Accessible at www.xeno-canto.org/121326.' }
     },
     {
-        latin: 'monedula', score: 2.937633026, name: 'Western Jackdaw', example: { url: 'https://xeno-canto.org/91185', score: 1.43, source: 'Lars Lachmann, XC91185. Accessible at www.xeno-canto.org/91185.' }
+        latin: 'apricaria', score: 0.797, name: 'European Golden Plover', example: { url: 'https://xeno-canto.org/42343', score: 0.558, source: 'Patrik Åberg, XC42343. Accessible at www.xeno-canto.org/42343.' }
     },
     {
-        latin: 'alpina', score: 2.914698878, name: 'Dunlin', example: { url: 'https://xeno-canto.org/118363', score: 2.15, source: 'Marco Dragonetti, XC118363. Accessible at www.xeno-canto.org/118363.' }
+        latin: 'monedula', score: 0.795, name: 'Western Jackdaw', example: { url: 'https://xeno-canto.org/91185', score: 0.379, source: 'Lars Lachmann, XC91185. Accessible at www.xeno-canto.org/91185.' }
     },
     {
-        latin: 'apricaria', score: 2.892921511, name: 'European Golden Plover', example: { url: 'https://xeno-canto.org/42343', score: 1.99, source: 'Patrik Åberg, XC42343. Accessible at www.xeno-canto.org/42343.' }
+        latin: 'alpina', score: 0.794, name: 'Dunlin', example: { url: 'https://xeno-canto.org/118363', score: 0.567, source: 'Marco Dragonetti, XC118363. Accessible at www.xeno-canto.org/118363.' }
     },
     {
-        latin: 'flammea', score: 2.727800541, name: 'Common Redpoll', example: { url: 'https://xeno-canto.org/35068', score: 1.63, source: 'Sander Bot, XC35068. Accessible at www.xeno-canto.org/35068.' }
+        latin: 'flammea', score: 0.746, name: 'Common Redpoll', example: { url: 'https://xeno-canto.org/35068', score: 0.447, source: 'Sander Bot, XC35068. Accessible at www.xeno-canto.org/35068.' }
     },
     {
-        latin: 'ridibundus', score: 2.662814017, name: 'Black-headed Gull', example: { url: 'https://xeno-canto.org/129577', score: 2.49, source: 'Alexandre Renaudier, XC129577. Accessible at www.xeno-canto.org/129577.' }
+        latin: 'ridibundus', score: 0.713, name: 'Black-headed Gull', example: { url: 'https://xeno-canto.org/129577', score: 0.65, source: 'Alexandre Renaudier, XC129577. Accessible at www.xeno-canto.org/129577.' }
     },
     {
-        latin: 'europaeus', score: 1.680914244, name: 'European Nightjar', example: { url: 'https://xeno-canto.org/156388', score: 1.05, source: 'Jack Berteau, XC156388. Accessible at www.xeno-canto.org/156388.' }
+        latin: 'europaeus', score: 0.463, name: 'European Nightjar', example: { url: 'https://xeno-canto.org/156388', score: 0.32, source: 'Jack Berteau, XC156388. Accessible at www.xeno-canto.org/156388.' }
     }
 ];
 
