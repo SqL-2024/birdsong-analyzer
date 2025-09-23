@@ -4,10 +4,10 @@
 const speciesRanking = [
     // ...existing top 10 species...
     {
-        latin: 'arvensis', score: 1.483, name: 'Eurasian Skylark', example: { url: 'https://xeno-canto.org/158166', score: 1.633, source: 'Mike Nelson, XC133862. Accessible at www.xeno-canto.org/133862.' }
+        latin: 'arvensis', score: 1.483, name: 'Eurasian Skylark', example: { url: 'https://xeno-canto.org/158166', score: 1.633, source: 'david m, XC158166. Accessible at www.xeno-canto.org/158166.' }
     },
     {
-        latin: 'rubecula', score:1.471, name: 'European Robin', example: { url: 'https://xeno-canto.org/133862', score: 1.675, source: 'david m, XC158166. Accessible at www.xeno-canto.org/158166.' }
+        latin: 'rubecula', score:1.471, name: 'European Robin', example: { url: 'https://xeno-canto.org/133862', score: 1.675, source: 'Mike Nelson, XC133862. Accessible at www.xeno-canto.org/133862.' }
     },
     {
         latin: 'calandra', score: 1.447, name: 'Corn Bunting', example: { url: 'https://xeno-canto.org/123167', score: 1.599, source: 'david m, XC123167. Accessible at www.xeno-canto.org/123167.' }
