@@ -169,6 +169,7 @@ class AudioAnalyzer {
     }
     calculateScore(features) {
         //normalized score calculation
+        console.log('Calculating score with features:', features);
         features.mfcc_8_std = Math.min(Math.max((features.mfcc_8_std - 0) / (26 - 0), 0), 1); //min 0, max 26
         features.spectral_centroid_std = Math.min(Math.max((features.spectral_centroid_std - 0) / (1670 - 0), 0), 1);//min 0, max 1670
         features.chroma_A_std = Math.min(Math.max((features.chroma_A_std - 0) / (0.5 - 0), 0), 1); //min 0, max 0.5

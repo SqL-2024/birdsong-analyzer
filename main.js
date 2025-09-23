@@ -66,15 +66,8 @@ function hideProgress() {
 function displayResults(features, score, analyzer) {
     const resultsSection = document.getElementById('resultsSection');
     const scoreValue = document.getElementById('scoreValue');
-    const percentileText = document.getElementById('percentileText');
     const featuresDisplay = document.getElementById('featuresDisplay');
     scoreValue.textContent = score.toFixed(3);
-    const percentile = analyzer.getPercentile(score);
-    percentileText.innerHTML = `
-        <strong>Your Score: ${score.toFixed(3)}</strong><br>
-        ${percentile.description}<br>
-        <small>Reference: Bird call data median is ${analyzer.birdScorePercentiles[50]}</small>
-    `;
     featuresDisplay.innerHTML = `
         <div class="feature-card">
             <div class="feature-label">MFCC-8 Standard Deviation</div>
