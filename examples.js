@@ -91,14 +91,14 @@ function renderExamples() {
             div.className = 'species-ranking-item';
             div.style.marginBottom = '18px';
             div.innerHTML = `
-                <div><strong>#${75 + idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
-                <div>Average Score: <span style="color:#fff;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
+                <div><strong>#${idx + 1} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
+                <div>Average Score: <span style="color:#000;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
                 <div class="example-recording">
                     <span>Example recording:</span>
                     <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
                     <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
-                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.source}</span>
                 </div>
+                <div style="font-size:0.8em;color:#000;margin-top:5px;">Source: ${sp.example.source}</div>
             `;
             top10Container.appendChild(div);
         });
@@ -110,14 +110,14 @@ function renderExamples() {
             div.className = 'species-ranking-item';
             div.style.marginBottom = '18px';
             div.innerHTML = `
-                <div><strong>#${speciesRanking.length-9+idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
-                <div>Average Score: <span style="color:#fff;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
+                <div><strong>#${75 + idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
+                <div>Average Score: <span style="color:#000;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
                 <div class="example-recording">
                     <span>Example recording:</span>
                     <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
                     <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
-                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.source}</span>
                 </div>
+                <div style="font-size:0.8em;color:#000;margin-top:5px;">Source: ${sp.example.source}</div>
             `;
             bottom10Container.appendChild(div);
         });
