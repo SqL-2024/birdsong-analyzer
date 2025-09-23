@@ -97,7 +97,7 @@ function renderExamples() {
                     <span>Example recording:</span>
                     <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
                     <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
-                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.citation}</span>
+                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.source}</span>
                 </div>
             `;
             top10Container.appendChild(div);
@@ -116,7 +116,7 @@ function renderExamples() {
                     <span>Example recording:</span>
                     <button class="play-btn" onclick="playExample('${sp.example.url}')">Play</button>
                     <span style="margin-left:10px;">Score: ${sp.example.score.toFixed(2)}</span>
-                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.citation}</span>
+                    <span style="margin-left:10px;font-size:0.9em;color:#fff;">Citation: ${sp.example.source}</span>
                 </div>
             `;
             bottom10Container.appendChild(div);
