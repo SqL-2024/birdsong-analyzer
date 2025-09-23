@@ -7,8 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const uploadArea = document.getElementById('uploadArea');
     const fileInput = document.getElementById('fileInput');
     const uploadBtn = document.getElementById('uploadBtn');
-    uploadBtn.addEventListener('click', () => fileInput.click());
-    uploadArea.addEventListener('click', () => fileInput.click());
+    uploadBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // 阻止事件冒泡
+        fileInput.click();
+    });
+    uploadArea.addEventListener('click', (e) => {
+        if (e.target === uploadArea) { // 只在直接点击上传区域时触发
+            fileInput.click();
+        }
+    });
     uploadArea.addEventListener('dragover', (e) => {
         e.preventDefault();
         uploadArea.classList.add('dragover');
