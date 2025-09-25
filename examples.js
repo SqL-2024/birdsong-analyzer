@@ -110,7 +110,7 @@ function renderExamples() {
             div.className = 'species-ranking-item';
             div.style.marginBottom = '18px';
             div.innerHTML = `
-                <div><strong>#${75 + idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
+                <div><strong>#${76 + idx} ${sp.name} (<i>${sp.latin}</i>)</strong></div>
                 <div>Average Score: <span style="color:#000;font-weight:bold;">${sp.score.toFixed(3)}</span></div>
                 <div class="example-recording">
                     <span>Example recording:</span>
